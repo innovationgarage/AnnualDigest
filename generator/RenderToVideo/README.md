@@ -3,7 +3,7 @@ Replaces text strings inside a presentation
     Usage:
     RenderToVideo.exe input_powerpoint.pptx output_video.mp4
     
-By default generates a High bitrate 4K 45 FPS video (hardcoded). It seems the PowerPoint renderer is quite buggy when using non standard parameters. For example, testing different framerates:
+By default generates a high bitrate (100% quality) 4K 45 FPS video (hardcoded). It seems the PowerPoint renderer is quite buggy when using non standard parameters. For example, testing different framerates:
 
 | FPS | Results |
 |-----|---------|
