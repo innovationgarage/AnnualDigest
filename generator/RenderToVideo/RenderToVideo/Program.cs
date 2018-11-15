@@ -12,6 +12,8 @@ namespace RenderToVideo
 {
     class Program
     {
+        private static string lastMsg;
+
         static void Main(string[] args)
         {
             Environment.CurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -51,18 +53,16 @@ namespace RenderToVideo
                     MsoTriState.msoTrue, MsoTriState.msoFalse, MsoTriState.msoFalse);
 
                 Console.WriteLine("Creating video ...");
-                p.CreateVideo(Path.GetFullPath(output), false, 1, 2160, 90, 99);
+                p.CreateVideo(Path.GetFullPath(output), false, 1, 2160, 45, 100);
 
                 var processing = true;
-                var sleep = 1000;
                 do
                 {
-                    Thread.Sleep(sleep);
+                    Thread.Sleep(100);
                     switch (p.CreateVideoStatus)
                     {
                         case PpMediaTaskStatus.ppMediaTaskStatusInProgress:
                             WriteStatus("Working ...");
-                            sleep = 10000;
                             break;
                         case PpMediaTaskStatus.ppMediaTaskStatusDone:
                             WriteStatus("Done!");
@@ -98,6 +98,10 @@ namespace RenderToVideo
 
         private static void WriteStatus(string msg)
         {
+            if (lastMsg == msg)
+                return;
+
+            lastMsg = msg;
             Console.WriteLine($"[Render] {msg}");
         }
 
