@@ -12,11 +12,11 @@ namespace ReplaceText
 
         static void Main(string[] args)
         {
+            Environment.CurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
             if (args.Length < 3)
             {
                 Console.WriteLine("Usage:\n" + Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location) +
                     " input_variables.txt input_powerpoint.pptx output_powerpoint.pptx");
-                Console.Read();
             }
             else
             {
@@ -47,7 +47,7 @@ namespace ReplaceText
 
             try
             {
-                p = ppApp.Presentations.Open(presentation,
+                p = ppApp.Presentations.Open(Path.GetFullPath(presentation),
                     MsoTriState.msoFalse, MsoTriState.msoFalse, MsoTriState.msoFalse);
 
                 try
@@ -103,7 +103,7 @@ namespace ReplaceText
                         if (output == presentation)
                             p.Save();
                         else
-                            p.SaveAs(output);
+                            p.SaveAs(Path.GetFullPath(output));
                 }
                 catch
                 {
@@ -126,7 +126,6 @@ namespace ReplaceText
                 throw new Exception($"Error while processing: {ex.Message}");
             }
         }
-
 
         private static Microsoft.Office.Interop.PowerPoint.Application InitializePowerPoint()
         {
