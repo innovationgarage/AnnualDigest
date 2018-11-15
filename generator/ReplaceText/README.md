@@ -7,3 +7,7 @@ Format for `input_variables.txt`:
 
     # comment
     text=replacement
+
+Requires:
+* Microsoft PowerPoint 16.0 Object Library
+* Microsoft Office 16.0 Object Library
