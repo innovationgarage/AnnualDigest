@@ -1,5 +1,5 @@
 Pipeline for video generation
 
-* ReplaceText
-* RenderToVideo
-* pyMovie mods (music and speed adjust)
+1. ReplaceText
+2. RenderToVideo
+3. pyMovie mods (music and speed adjust)
