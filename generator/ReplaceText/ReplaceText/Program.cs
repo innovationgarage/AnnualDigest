@@ -16,14 +16,14 @@ namespace ReplaceText
             if (args.Length < 3)
             {
                 Console.WriteLine("Usage:\n" + Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location) +
-                    " input_variables.txt input_powerpoint.pptx output_powerpoint.pptx");
+                    " input_powerpoint.pptx output_powerpoint.pptx input_variables.txt");
             }
             else
             {
                 try
                 {
-                    Console.WriteLine($"Processing: {args[1]}");
-                    ProcessPowerPoint(ParseReplacements(args[0]), args[1], args[2]);
+                    Console.WriteLine($"Processing: {args[0]}");
+                    ProcessPowerPoint(ParseReplacements(args[2]), args[0], args[1]);
                     Console.WriteLine("Done.");
                 }
                 catch (Exception ex)
