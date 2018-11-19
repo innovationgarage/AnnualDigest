@@ -334,3 +334,10 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+*/.vscode/settings.json
+
+# Video and media files
+*.mp4
+*.webm
+*.pptx
+*.mp3
