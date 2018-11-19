@@ -53,7 +53,7 @@ namespace RenderToVideo
                     MsoTriState.msoTrue, MsoTriState.msoFalse, MsoTriState.msoFalse);
 
                 Console.WriteLine("Creating video ...");
-                p.CreateVideo(Path.GetFullPath(output), false, 1, 2160, 45, 100);
+                p.CreateVideo(Path.GetFullPath(output), true, 0, 2160, 45, 100);
 
                 var processing = true;
                 do
