@@ -1,7 +1,7 @@
 Replaces text strings inside a presentation
 
     Usage:
-    ReplaceText.exe input_variables.txt input_powerpoint.pptx output_powerpoint.pptx
+    ReplaceText.exe input_powerpoint.pptx output_powerpoint.pptx input_variables.txt
     
 Format for `input_variables.txt`:
 
