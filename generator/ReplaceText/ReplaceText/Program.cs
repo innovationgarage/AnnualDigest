@@ -145,7 +145,7 @@ namespace ReplaceText
         {
             foreach (var line in File.ReadAllLines(v))
             {
-                if (line.StartsWith("#"))
+                if (line.StartsWith("#") || !line.Contains("="))
                     continue;
 
                 var s = line.Split('=');
