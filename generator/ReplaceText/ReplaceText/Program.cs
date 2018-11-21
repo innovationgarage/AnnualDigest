@@ -143,7 +143,7 @@ namespace ReplaceText
 
         private static IEnumerable<SearchReplace> ParseReplacements(string v)
         {
-            foreach (var line in File.ReadAllLines(v))
+            foreach (var line in File.ReadAllLines(v, System.Text.Encoding.GetEncoding("iso-8859-1")))
             {
                 if (line.StartsWith("#") || !line.Contains("="))
                     continue;
