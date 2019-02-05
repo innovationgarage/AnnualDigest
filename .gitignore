@@ -341,3 +341,5 @@ ASALocalRun/
 *.webm
 *.pptx
 *.mp3
+generator/PyComposer/.vscode/launch.json
+*/test/*

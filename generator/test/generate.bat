@@ -15,9 +15,9 @@ rem python -m venv env
 rem pip install -r requirements.txt
 
 :environment
-env\Scripts\python.exe compose.py temp.mp4 %4 %5
+start env\Scripts\python.exe compose.py temp.mp4 %4 %5
 del temp.pptx
-del temp.mp4
+rem del temp.mp4
 rem exit
 goto end
 
